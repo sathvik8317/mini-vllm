@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mini-vllm"
+version = "0.1.0"
+description = "A from-scratch LLM inference engine with a paged KV cache, continuous batching, prefix caching and CUDA-graph decode."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "torch>=2.4",
+    "transformers>=4.45",
+    "safetensors",
+    "huggingface_hub",
+]
+
+[project.optional-dependencies]
+server = ["fastapi", "uvicorn", "pydantic"]
+bench = ["accelerate"]
+dev = ["pytest", "requests"]
+
+[project.scripts]
+minivllm-serve = "minivllm.server:main"
+
+[tool.setuptools]
+packages = ["minivllm"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+markers = ["gpu: needs a CUDA GPU and downloads the model"]

@@ -1,0 +1,72 @@
+{
+  "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "minivllm": {
+    "elapsed_s": 14.697009600000456,
+    "tok_per_s": 1185.4112145371028,
+    "mean_ttft_s": 2.188475075000497,
+    "mean_latency_s": 10.513582162499915,
+    "steps": 269,
+    "prefill_steps": 14,
+    "decode_steps": 255,
+    "peak_blocks": 1919,
+    "num_blocks": 4937,
+    "preemptions": 0,
+    "avg_decode_batch": 67.81960784313725
+  },
+  "minivllm_eager": {
+    "elapsed_s": 20.90114440000616,
+    "tok_per_s": 833.5428752884395
+  },
+  "prefix_caching": {
+    "off": {
+      "elapsed_s": 14.797910499968566,
+      "tok_per_s": 138.3979177333415,
+      "mean_ttft_s": 6.678607845315128,
+      "prefill_tokens_computed": 66724,
+      "hit_rate": 0.0
+    },
+    "on": {
+      "elapsed_s": 2.1226860999595374,
+      "tok_per_s": 964.8152875919991,
+      "mean_ttft_s": 0.5283346781543514,
+      "prefill_tokens_computed": 2212,
+      "hit_rate": 0.9668485102811583
+    }
+  },
+  "hf_static": {
+    "elapsed_s": 131.53933540004073,
+    "tok_per_s": 132.44707331853073,
+    "batch_size": 16,
+    "computed_tokens": 30480,
+    "wasted_fraction": 0.42841207349081367,
+    "peak_mem_gb": 1.9165544509887695
+  },
+  "hf_sequential": {
+    "elapsed_s": 108.40428169997176,
+    "tok_per_s": 17.351713147327555,
+    "num_requests": 12
+  },
+  "fragmentation": {
+    "rows": [
+      [
+        "contiguous, reserve max_model_len",
+        4194304
+      ],
+      [
+        "HF static batch (padding to longest)",
+        75696
+      ],
+      [
+        "paged, block_size=16",
+        45568
+      ],
+      [
+        "ideal (exact)",
+        44608
+      ]
+    ],
+    "used_slots": 44608,
+    "paged_live_waste": 0.02267389363869958
+  }
+}
