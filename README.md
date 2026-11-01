@@ -52,7 +52,7 @@ Requires Python 3.10+ and an NVIDIA GPU. It was developed on Windows 11 with an 
 4 GB, CUDA 12.8 and torch 2.11.
 
 ```bash
-git clone https://github.com/<you>/mini-vllm.git
+git clone https://github.com/sathvik8317/mini-vllm.git
 cd mini-vllm
 python -m venv .venv
 # Windows: .venv\Scripts\activate      Linux/macOS: source .venv/bin/activate
